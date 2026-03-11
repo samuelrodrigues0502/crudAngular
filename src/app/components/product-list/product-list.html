@@ -1,0 +1,74 @@
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
+
+<div class="card">
+    <div class="header">
+        <h1>Gerenciamento de Produtos</h1>
+
+        <div class="stats">
+            <div class="stat-card">
+                <span>Total de Produtos</span>
+                <strong>{{ totalProducts() }}</strong>
+            </div>
+            <div class="stat-card">
+                <span>Valor Total em Estoque</span>
+                <strong>{{ formatPrice(totalStockValue()) }}</strong>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <p-button
+            label="Adicionar Produto"
+            icon="pi pi-plus"
+            styleClass="p-button-success"
+            (onClick)="openNewProduct()"
+        ></p-button>
+    </div>
+
+    <p-table
+        [value]="products()"
+        [paginator]="true"
+        [rows]="10"
+        [tableStyle]="{ 'min-width': '60rem' }">
+
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Categoria</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Ações</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td>
+                    <span class="badge">{{ product.category }}</span>
+                </td>
+                <td>{{ formatPrice(product.price) }}</td>
+                <td>{{ product.stock }} un.</td>
+                <td>
+                    <p-button
+                       icon="pi pi-pencil"
+                       styleClass="p-button-warning"
+                       [text]="true"
+                       [rounded]="true"
+                    ></p-button>
+                    <p-button
+                       icon="pi pi-trash"
+                       styleClass="p-button-danger"
+                       [text]="true"
+                       [rounded]="true"
+                       (onClick)="deleteProduct(product.id, product.name)"
+                    ></p-button>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
