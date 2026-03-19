@@ -11,6 +11,20 @@ import { Product, ProductFormData } from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductService {
+
+  private get storage(): Storage | null {
+    const candidate = globalThis.localStorage as Partial<Storage> | undefined;
+    if (!candidate) {
+      return null;
+    }
+
+    const hasStorageMethods =
+      typeof candidate.getItem === 'function' &&
+      typeof candidate.setItem === 'function' &&
+      typeof candidate.removeItem === 'function';
+
+    return hasStorageMethods ? (candidate as Storage) : null;
+  }
   
   /**
    * CONCEITO: SIGNALS
@@ -152,14 +166,14 @@ export class ProductService {
    * CONCEITO: Persistência local mantém os dados mesmo após refresh
    */
   private saveToLocalStorage(): void {
-    localStorage.setItem('products', JSON.stringify(this.productsSignal()));
+    this.storage?.setItem('products', JSON.stringify(this.productsSignal()));
   }
 
   /**
    * Carrega produtos do localStorage ou retorna dados iniciais
    */
   private getInitialProducts(): Product[] {
-    const stored = localStorage.getItem('products');
+    const stored = this.storage?.getItem('products');
     
     if (stored) {
       // Parse e converte strings de data de volta para objetos Date
@@ -213,6 +227,6 @@ export class ProductService {
    */
   clearAll(): void {
     this.productsSignal.set([]);
-    localStorage.removeItem('products');
+    this.storage?.removeItem('products');
   }
 }

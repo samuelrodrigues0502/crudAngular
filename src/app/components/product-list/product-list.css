@@ -51,6 +51,30 @@
   margin-bottom: 1.5rem;
 }
 
+/* Imagem do produto na tabela */
+.product-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  display: block;
+}
+
+/* Ícone placeholder quando não tem imagem */
+.no-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  color: #adb5bd;
+  font-size: 1.5rem;
+}
+
 /* Badge de categoria */
 .badge {
   display: inline-block;
@@ -219,4 +243,46 @@
 
 ::ng-deep .p-button.p-button-text {
   margin: 0 0.25rem;
+}
+
+/* ================================================
+   FORMULÁRIO DE CRIAÇÃO/EDIÇÃO
+   ================================================ */
+
+.edit-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.field small {
+  color: #b91c1c;
+  font-size: 0.8rem;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 720px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
 }
