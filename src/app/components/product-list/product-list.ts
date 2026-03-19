@@ -4,16 +4,12 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
-
-// Módulo necessário para diretivas Angular (*ngIf, *ngFor, pipes, etc)
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service';
 import { ConfirmationService, MessageService } from 'primeng/api';
 
 import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Product, ProductFormData } from '../../models/product.model';
-
-// Módulos PrimeNG para o formulário
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { SelectModule } from 'primeng/select';
