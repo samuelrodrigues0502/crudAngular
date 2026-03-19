@@ -5,11 +5,31 @@ Aplicação web para gerenciamento de produtos com operações de cadastro, list
 <p align="left">
 	<img alt="Angular" src="https://img.shields.io/badge/Angular-21-DD0031?logo=angular&logoColor=white" />
 	<img alt="PrimeNG" src="https://img.shields.io/badge/PrimeNG-21-0A5CFF" />
-	<img alt="Status" src="https://img.shields.io/badge/Status-Em%20desenvolvimento-2EA44F" />
 </p>
+
+## Preview
+
+<p align="center">
+	<img src="docs/screenshots/print1.png" alt="Visão geral da aplicação com dashboard e tabela de produtos" />
+</p>
+
+<table>
+	<tr>
+		<td width="33%">
+			<img src="docs/screenshots/print2.png" alt="Modal de cadastro de produto" />
+		</td>
+		<td width="33%">
+			<img src="docs/screenshots/print3.png" alt="Modal de edição de produto" />
+		</td>
+		<td width="33%">
+			<img src="docs/screenshots/print4.png" alt="Modal de confirmação para excluir produto" />
+		</td>
+	</tr>
+</table>
 
 ## Sumário
 
+- [Preview](#preview)
 - [Stack](#stack)
 - [Funcionalidades](#funcionalidades)
 - [Prints da aplicação](#prints-da-aplicação)
@@ -36,11 +56,6 @@ Aplicação web para gerenciamento de produtos com operações de cadastro, list
 ## Prints da aplicação
 
 <table>
-	<tr>
-		<td colspan="2" align="center">
-			<img src="docs/screenshots/print1.png" alt="Visão geral da aplicação com dashboard e tabela de produtos" />
-		</td>
-	</tr>
 	<tr>
 		<td align="center"><strong>Cadastro de produto</strong></td>
 		<td align="center"><strong>Edição de produto</strong></td>
